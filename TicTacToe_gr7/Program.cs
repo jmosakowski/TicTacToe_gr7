@@ -6,6 +6,10 @@ namespace TicTacToe_gr7
     {
         static void Main(string[] args)
         {
+            // Create two players
+            HumanPlayer p1 = new HumanPlayer() { Name = "JacekM", Symbol = 'x' };
+            ComputerPlayer p2 = new ComputerPlayer() { Name = "AI", Symbol = 'o' };
+
             char[,] startBoard = {
                 { '1', '2', '3' },
                 { '4', '5', '6' },
@@ -28,12 +32,14 @@ namespace TicTacToe_gr7
 
                 if (nextIsPlayer1)
                 {
-                    // TODO: player 1 move
+                    Console.WriteLine(p1.Name + " move");
+                    player1Won = p1.MakeMove(startBoard, gameBoard);
                     nextIsPlayer1 = false;
                 }
                 else
                 {
-                    // TODO: player 2 move
+                    Console.WriteLine(p2.Name + " move");
+                    player2Won = p2.MakeMove(startBoard, gameBoard);
                     nextIsPlayer1 = true;
                 }
 
